@@ -1,0 +1,13 @@
+///////////////////////
+///////////////////////             PROJET PHP ARTICLES LEMAITRE MARIAN LPASR
+//////////////////////
+
+PHPmyadmin 
+login : admin
+mdp : 
+
+PageArticles
+login papa@papa.fr
+mdp : papa
+
+utilisation : wampServer, composer twig, visualStudio
