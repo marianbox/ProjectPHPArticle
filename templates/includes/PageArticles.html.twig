@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	{% include 'includes/header.html.twig' %}
+
+
+	<body>
+		<!-- Responsive navbar-->
+		{% include 'includes/menu.html.twig' %}
+
+
+		<!-- Page Content-->
+		<div
+			class="container px-4 px-lg-5">
+			<!-- Heading Row-->
+			<div class="row gx-4 gx-lg-5 align-items-center my-5">
+
+
+				<div class="col-12">
+					<h1 class="font-weight-light">{{ articles.getTitre }}</h1>
+					<br>
+					<br>
+					<img class="card-img-top" src="img/{{ articles.getId }}.jpg" style="width:200px;height:200px">
+					<br>
+					<p>{{articles.getTexte}}</p>
+					<br>
+					<br>
+
+
+				</div>
+			</div>
+
+
+			<!-- Content Row-->
+			<!-- Formulaire-->
+
+
+			<br>
+
+		</div>
+
+
+		<h1 class="font-weight-light">
+			{{ "n'hesiter pas a mettre un commentaire ci dessous" }}
+		</h1>
+		<form
+			method="POST" id="commentForm" action='PageArticles.php' enctype="multipart/form-data">
+
+
+			<!--ID article-->
+			<div class="mb-3" hidden>
+				<label for="texte" class="form-label">ID</label>
+				<input type="text" name="id_articles" class="form-control" id="texte" aria-describedby="emailHelp" value={{ articles.getId }}>
+				<div id="emailHelp" class="form-text"></div>
+			</div>
+
+
+			<!-- Pseudo-->
+			<div class="mb-3">
+				<label for="texte" class="form-label">Pseudo</label>
+				<input type="text" name="pseudo" class="form-control" id="texte" aria-describedby="emailHelp">
+				<div id="emailHelp" class="form-text"></div>
+			</div>
+
+			<!-- Adresse mail-->
+			<div class="mb-3">
+				<label for="texte" class="form-label">email</label>
+				<input type="text" name="email" class="form-control" id="texte" aria-describedby="emailHelp" required>
+				<div id="emailHelp" class="form-text"></div>
+			</div>
+
+			<!-- Texte-->
+			<div class="input-group">
+				<span class="input-group-text">commentaire</span>
+				<textarea class="form-control" name="commentaires_texte" aria-label="With textarea" required></textarea>
+			</div>
+
+
+			<button type="submit" class="btn btn-primary" name="AddComment">Ajouter mon commentaire</button>
+
+		</form>
+		<!-- Ici afficher tous les commentaire de l'article-->
+		{% for articles in ListCommentaires %}
+			<div class="card" style="width: 18rem;">
+				<div class="card-body">
+					<h5 class="card-title" name="id_articles">
+						{{ articles.getid_articles }}</h5>
+					<h4 class="card-title">{{ articles.getpseudo }}</h4<h5class="card-title">
+					{{ articles.getemail }}</h5>
+				<p class="card-text">{{ articles.getcommentaires_texte }}</p>
+
+			</div>
+		</div>
+
+	{% endfor %}
+
+
+	<!-- Footer-->
+	{% include 'includes/footer.html.twig' %}
+	</body>
+</html>
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	{% include 'includes/header.html.twig'%}
+
+
+	<body>
+		<!-- Responsive navbar-->
+		{% include 'includes/menu.html.twig'%}
+
+
+		<!-- Page Content-->
+		<div
+			class="container px-4 px-lg-5">
+			<!-- Heading Row-->
+			<div class="row gx-4 gx-lg-5 align-items-center my-5">
+
+				<div class="col-12">
+					<h1 class="font-weight-light">
+						{{ "Bienvenue dans le formulaire pour ajouter des utilisateurs" }}</h1>
+					<p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
+
+				</div>
+			</div>
+
+
+			<!-- Content Row-->
+			<!-- Formulaire-->
+			<form
+				method="POST" id="utilisateursForm" action="FormUtilisateurs.php" enctype="multipart/form-data">
+
+				<!-- nom-->
+				<div class="mb-3">
+					<label for="texte" class="form-label">Nom</label>
+					<input type="text" name="nom" class="form-control" id="texte" aria-describedby="emailHelp">
+					<div id="emailHelp" class="form-text"></div>
+				</div>
+
+
+				<!-- prenom-->
+				<div class="mb-3">
+					<label for="texte" class="form-label">prenom</label>
+					<input type="text" name="prenom" class="form-control" id="texte" aria-describedby="emailHelp">
+					<div id="emailHelp" class="form-text"></div>
+				</div>
+
+				<!-- email-->
+				<div class="mb-3">
+					<label for="texte" class="form-label">email</label>
+					<input type="email" name="email" class="form-control" id="texte" aria-describedby="emailHelp">
+					<div id="emailHelp" class="form-text"></div>
+				</div>
+
+
+				<!-- mdp-->
+				<div class="mb-3">
+					<label for="texte" class="form-label">mdp</label>
+					<input type="password" name="mdp" class="form-control" id="texte" aria-describedby="emailHelp">
+					<div id="emailHelp" class="form-text"></div>
+				</div>
+
+
+				<br><br>
+
+
+				<button type="submit" class="btn btn-primary" name="submit">Ajouter Mon utilisateurs</button>
+			</form>
+
+
+			<br>
+
+		</div>
+
+
+		<!-- Footer-->
+		{% include 'includes/footer.html.twig' %}
+	</body>
+</html>
+
